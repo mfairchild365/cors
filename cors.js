@@ -10,8 +10,16 @@
  */
 function getCORS(url, data, callback, type) {
     try {
-        // Try using jQuery to get data
-        jQuery.get(url, data, callback, type);
+        // Try using jQuery Ajax
+        jQuery.ajax({
+            url: url,
+            data: data,
+            method: 'GET',
+            success: callback,
+            beforeSend: function(xhr){
+               xhr.withCredentials = true;
+            }
+        });
     } catch(e) {
         // jQuery get() failed, try IE8 CORS, or use the proxy
         if (jQuery.browser.msie && window.XDomainRequest) {
@@ -58,8 +66,16 @@ function getCORS(url, data, callback, type) {
 function postCORS(url, data, callback, type)
 {
     try {
-        // Try using jQuery to POST
-        jQuery.post(url, data, callback, type);
+        // Try using jQuery to Ajax
+        jQuery.ajax({
+            url: url,
+            data: data,
+            method: 'POST',
+            success: callback,
+            beforeSend: function(xhr){
+               xhr.withCredentials = true;
+            }
+        });
     } catch(e) {
         // jQuery POST failed
         var params = '';
