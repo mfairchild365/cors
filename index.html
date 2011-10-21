@@ -15,10 +15,12 @@ function testPost(form)
 }
 </script>
 <body>
-<h1>CORS Examples</h1>
+<h1>CORS cookies/session Examples</h1>
 
 <p>Test GET
-    This page retrieves content from another server, using CORS<br /> 
+    This page retrieves content from another server (in this case, a subdomain), using CORS<br /> 
+    The purpose of this is to show how cookies (and thus php sessions) can be passed with CORS using the 
+    'Access-Control-Allow-Credentials: true' header.<br />
     <a href="#" onclick="testGet(); return false;">Get content from another server</a>
 </p>
 
@@ -28,6 +30,7 @@ function testPost(form)
         <input type="submit" />
     </form>
 </p>
+<a href="https://github.com/mfairchild365/cors">Example Code</a> <br />
 <a href="http://saltybeagle.com/2009/09/cross-origin-resource-sharing-demo/">More info</a>
 </body>
 </html>
