@@ -3,13 +3,15 @@
 <script type="text/javascript" src="cors.js"></script>
 <script type="text/javascript">
 
+var url = 'http://ucommbieber.unl.edu/CORS/cors.php';
+
 function testGet()
 {
-    getCORS('http://ucommbieber.unl.edu/CORS/cors.php', null, function(data){alert(data);});
+    getCORS(url, null, function(data){alert(data);});
 }
 function testPost(form)
 {
-    postCORS('http://ucommbieber.unl.edu/CORS/cors.php', {name: form.name.value}, function(data){alert(data);});
+    postCORS(url, {name: form.name.value}, function(data){alert(data);});
 }
 </script>
 <body>
