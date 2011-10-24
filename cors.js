@@ -17,7 +17,7 @@ function getCORS(url, data, callback, type) {
             type: 'GET',
             success: callback,
             xhrFields: {
-               withCredentials: true;
+               withCredentials: true
             }
         });
     } catch(e) {
@@ -73,7 +73,7 @@ function postCORS(url, data, callback, type)
             type: 'POST',
             success: callback,
             xhrFields: {
-               withCredentials: true;
+               withCredentials: true
             }
         });
     } catch(e) {
