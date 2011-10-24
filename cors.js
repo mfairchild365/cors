@@ -16,8 +16,8 @@ function getCORS(url, data, callback, type) {
             data: data,
             method: 'GET',
             success: callback,
-            beforeSend: function(xhr){
-               xhr.withCredentials = true;
+            xhrFields: {
+               xhr.withCredentials: true;
             }
         });
     } catch(e) {
@@ -72,8 +72,8 @@ function postCORS(url, data, callback, type)
             data: data,
             method: 'POST',
             success: callback,
-            beforeSend: function(xhr){
-               xhr.withCredentials = true;
+            xhrFields: {
+               xhr.withCredentials: true;
             }
         });
     } catch(e) {
