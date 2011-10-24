@@ -14,10 +14,10 @@ function getCORS(url, data, callback, type) {
         jQuery.ajax({
             url: url,
             data: data,
-            method: 'GET',
+            type: 'GET',
             success: callback,
             xhrFields: {
-               xhr.withCredentials: true;
+               withCredentials: true;
             }
         });
     } catch(e) {
@@ -70,10 +70,10 @@ function postCORS(url, data, callback, type)
         jQuery.ajax({
             url: url,
             data: data,
-            method: 'POST',
+            type: 'POST',
             success: callback,
             xhrFields: {
-               xhr.withCredentials: true;
+               withCredentials: true;
             }
         });
     } catch(e) {
